@@ -10,3 +10,10 @@ tf-plan:
 	terraform plan -out ../terraform-plan.out || exit 0 && \
 	cd ..
 
+cdk-synth:
+	cd ./sample-cdk && \
+	python3 -m venv .venv && \
+	source .venv/bin/activate && \
+	python3 -m pip install -r requirements.txt && \
+	cdk synth -o ../cdk-eks.out || exit 0 && \
+	cd ..

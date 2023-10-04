@@ -1,0 +1,95 @@
+{
+  "version": "34.0.0",
+  "artifacts": {
+    "SampleCdkStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "SampleCdkStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "SampleCdkStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "SampleCdkStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4d0fa1ba7c42469541454e9c090926db51c6438e8ebc2800970607ddfcd7b0fe.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "SampleCdkStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "SampleCdkStack.assets"
+      ],
+      "metadata": {
+        "/SampleCdkStack/SampleCdkQueue/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SampleCdkQueue8F4B9238"
+          }
+        ],
+        "/SampleCdkStack/SampleCdkQueue/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SampleCdkQueuePolicy0B4E0099"
+          }
+        ],
+        "/SampleCdkStack/SampleCdkQueue/SampleCdkStackSampleCdkTopicCDBF9A42/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SampleCdkQueueSampleCdkStackSampleCdkTopicCDBF9A42EDC347A8"
+          }
+        ],
+        "/SampleCdkStack/SampleCdkTopic/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SampleCdkTopicA14E3A68"
+          }
+        ],
+        "/SampleCdkStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/SampleCdkStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/SampleCdkStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/SampleCdkStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "SampleCdkStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
